@@ -3,8 +3,10 @@ package login;
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Label;
+import java.awt.Panel;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +18,8 @@ public class LoginMain extends WindowAdapter implements ActionListener {
 	private Frame f;
 	private Label lid;
 	private Label lpwd;
-
+	private Panel p;
+	
 	private TextField id;
 	private TextField pwd;
 	private TextField result;
@@ -24,15 +27,23 @@ public class LoginMain extends WindowAdapter implements ActionListener {
 	private Button signup;
 	private String myid;
 	private String mypwd;
+	
+	private Font font1;
 
 	public LoginMain() {
+		
+		font1 = new Font("f", Font.BOLD,17);
 		f = new Frame("Login");
 		f.setBackground(Color.cyan);
-		lid = new Label("id : ", Label.CENTER);
-		lpwd = new Label("password : ", Label.CENTER);
-
-		id = new TextField(10);
-		pwd = new TextField(10);
+		
+		p = new Panel();
+		lid = new Label("아이디 : ", Label.CENTER);
+		lid.setFont(font1);
+		lpwd = new Label("암   호 : ", Label.CENTER);
+		lpwd.setFont(font1);
+		
+		id = new TextField(20);
+		pwd = new TextField(20);
 		result = new TextField(40);
 		log = new Button("로그인");
 		result.setEditable(false);
@@ -41,20 +52,20 @@ public class LoginMain extends WindowAdapter implements ActionListener {
 	}
 
 	public void startframe() {
-		f.setSize(400, 100);
-		f.setLayout(new FlowLayout());
+		f.setSize(300, 180);
+		f.add(result,"North");
+		f.add(p,"Center");
 		f.addWindowListener(this);
 		log.addActionListener(this);
 		signup.addActionListener(this);
 		pwd.setEchoChar('*');
 
-		f.add(lid);
-		f.add(id);
-		f.add(lpwd);
-		f.add(pwd);
-		f.add(log);
-		f.add(result);
-		f.add(signup);
+		p.add(lid);
+		p.add(id);
+		p.add(lpwd);
+		p.add(pwd);
+		p.add(log);
+		p.add(signup);
 		f.setVisible(true);
 	}
 
