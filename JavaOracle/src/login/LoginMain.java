@@ -2,7 +2,6 @@ package login;
 
 import java.awt.Button;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Label;
@@ -19,7 +18,7 @@ public class LoginMain extends WindowAdapter implements ActionListener {
 	private Label lid;
 	private Label lpwd;
 	private Panel p;
-	
+
 	private TextField id;
 	private TextField pwd;
 	private TextField result;
@@ -27,21 +26,21 @@ public class LoginMain extends WindowAdapter implements ActionListener {
 	private Button signup;
 	private String myid;
 	private String mypwd;
-	
+
 	private Font font1;
 
 	public LoginMain() {
-		
-		font1 = new Font("f", Font.BOLD,17);
+
+		font1 = new Font("f", Font.BOLD, 17);
 		f = new Frame("Login");
 		f.setBackground(Color.cyan);
-		
+
 		p = new Panel();
 		lid = new Label("아이디 : ", Label.CENTER);
 		lid.setFont(font1);
 		lpwd = new Label("암   호 : ", Label.CENTER);
 		lpwd.setFont(font1);
-		
+
 		id = new TextField(20);
 		pwd = new TextField(20);
 		result = new TextField(40);
@@ -53,8 +52,8 @@ public class LoginMain extends WindowAdapter implements ActionListener {
 
 	public void startframe() {
 		f.setSize(300, 180);
-		f.add(result,"North");
-		f.add(p,"Center");
+		f.add(result, "North");
+		f.add(p, "Center");
 		f.addWindowListener(this);
 		log.addActionListener(this);
 		signup.addActionListener(this);

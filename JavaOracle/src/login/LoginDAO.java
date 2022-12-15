@@ -53,34 +53,6 @@ public class LoginDAO {
 		return list;
 
 	}
-	
-	public ArrayList<SignupVo> list(String id, String pwd,String name,String resi){
-		ArrayList<SignupVo> list = new ArrayList<SignupVo>();
-		
-		try {
-			connDB();
-			
-			String query = "SELECT * FROM quiz ";
-			if(id != null && pwd != null && name != null && resi != null) {
-				query += "where quiz_id = '" + id.toLowerCase() + "'";
-				query += "and quiz_resident_id = '" + resi.toLowerCase() + "'";
-			}
-			System.out.println("SQL : " +query);
-			rs = stmt.executeQuery(query);
-			rs.last();
-			
-			if(rs.getRow() == 0) {
-				
-			}
-			
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return null;
-	}
-	
-	
 
 	private void connDB() {
 		try {

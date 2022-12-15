@@ -1,28 +1,20 @@
 package login;
 
 public class SignupVo {
-	private String name;
-	private String resi;
 	private String id;
 	private String pwd;
+	private String resi;
+	private String name;
 
 	public SignupVo() {
 
 	}
 
-	public SignupVo(String name, String resi, String id, String pwd) {
-		this.name = name;
-		this.resi = resi;
+	public SignupVo(String id, String pwd, String resi, String name) {
 		this.id = id;
 		this.pwd = pwd;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getResi() {
-		return resi;
+		this.resi = resi;
+		this.name = name;
 	}
 
 	public String getId() {
@@ -33,4 +25,13 @@ public class SignupVo {
 		return pwd;
 	}
 
+	public String getResi() {
+		return resi;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
+	
 }

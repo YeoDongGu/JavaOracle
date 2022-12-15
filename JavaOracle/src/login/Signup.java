@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 
 public class Signup extends WindowAdapter implements ActionListener {
 	private Frame f;
@@ -98,7 +99,9 @@ public class Signup extends WindowAdapter implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("가입하기")) {
-			LoginDAO dao = new LoginDAO();
+			SignupDAO dao = new SignupDAO();
+			ArrayList<SignupVo> list = dao.list(id.getText(), pwd.getText(), resi.getText(), name.getText());
+
 		}
 
 	}
