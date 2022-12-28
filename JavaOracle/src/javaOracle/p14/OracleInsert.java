@@ -36,7 +36,6 @@ public class OracleInsert {
 			String sql2 = "SELECT sidonm, sggunm, yadmnm , telno FROM covid";
 
 			ResultSet rs = stmt.executeQuery(sql2);
-
 			while (rs.next()) {
 				System.out.print(rs.getString("sidonm") + "\t");
 				System.out.print(rs.getString("sggunm") + "\t");
