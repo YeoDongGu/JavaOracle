@@ -19,28 +19,16 @@ public class OracleInsert {
 			String sql3 = "SELECT yadmnm from covid";
 			ResultSet rs2 = stmt.executeQuery(sql3);
 
-//			rs2.next();
-//			int n = rs2.getInt("max(deptno)") + 10;
-//			String str = Integer.toString(n);
-//			String ideptno = str, sdname = "IT", sloc = "SEOUL";
-//			String sql = "INSERT INTO dept VALUES ('" + ideptno + "','" + sdname + "','" + sloc + "')";
-//			boolean b = stmt.execute(sql);
-
-//			if (!b) {
-//				System.out.println("Insert success. \n");
-//			} else {
-//				System.out.println("Insert fail.\n");
-//			}
-//			// String sql = "SELECT * FROM dept";
-
 			String sql2 = "SELECT sidonm, sggunm, yadmnm , telno FROM covid";
 
 			ResultSet rs = stmt.executeQuery(sql2);
 			while (rs.next()) {
+//				if (rs.getString("sidonm") == "경기") {
 				System.out.print(rs.getString("sidonm") + "\t");
 				System.out.print(rs.getString("sggunm") + "\t");
 				System.out.print(rs.getString("telno") + "\t");
-				System.out.println(rs.getString("yadmnm") + " ");
+				System.out.println(rs.getString("yadmnm"));
+//				}
 			}
 		} catch (ClassNotFoundException e) {
 			System.out.println(e);
